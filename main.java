@@ -1,8 +1,7 @@
-
+/* í´ë˜ìŠ¤ */
 public class main {
 //private
-	
-		private static String name="ÀÌÁö¼ö",dep="ÄÄÇ»ÅÍ°øÇĞ°ú",num="20130652";
+		private static String name="ì´ì§€ìˆ˜",dep="ì»´í“¨í„°ê³µí•™ê³¼",num="20130652";
 
 		public static String getName() {
 			return name;
