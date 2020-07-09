@@ -3,15 +3,15 @@ import java.util.Scanner;
 
 
 public class info {
-
+/* ë©”ì¸ ì²˜ë¦¬ */
 	public static void main(String[] args) {
-		System.out.println("Á¦ÀÛÀÚ"); 
-        System.out.println("ÀÌ¸§ : "+main.getName()+", ÇĞ°ú : "+main.getDep()+", ÇĞ¹ø : "+main.getNum());//private
+		System.out.println("ì œì‘ì"); 
+        System.out.println("ì´ë¦„ : "+main.getName()+", í•™ê³¼ : "+main.getDep()+", í•™ë²ˆ : "+main.getNum());//private
 		System.out.println();
-		System.out.println("[´ëÇĞ °ü¸® ½Ã½ºÅÛ]");
+		System.out.println("[ëŒ€í•™ ê´€ë¦¬ ì‹œìŠ¤í…œ]");
 		System.out.println();
 	    System.out.println("==================================================================");
-		System.out.println("1. ±³¼ö °ü¸® | 2. Á÷¿ø °ü¸®| 3. ÇĞ»ı °ü¸® | 4. ÇĞ°ú °ü¸® | 5. ±³°ú¸ñ °ü¸®  | 0. ÃÊ±âÈ­¸é");
+		System.out.println("1. êµìˆ˜ ê´€ë¦¬ | 2. ì§ì› ê´€ë¦¬| 3. í•™ìƒ ê´€ë¦¬ | 4. í•™ê³¼ ê´€ë¦¬ | 5. êµê³¼ëª© ê´€ë¦¬  | 0. ì´ˆê¸°í™”ë©´");
 		System.out.println("==================================================================");
 		System.out.println();
 		Scanner scan = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class info {
           	subject.sub();
           	break; 
           case 0 :
-          	System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù."); 
+          	System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤."); 
           	System.exit(0); 
         } 
 		
