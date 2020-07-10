@@ -1,244 +1,240 @@
 import java.util.Scanner;
-
 import pbl.clear;
-
 import java.util.HashMap;
-public class student extends person {
+
+/* í•™ìƒ ê´€ë¦¬ */
+public class student extends person {	
+	public static HashMap<String, student>map = new HashMap<String, student>();
+	public static student st = new student();
+	String sub;		//ê³¼ëª©
+	double grade;	//ì„±ì 
 	
-	 public static HashMap<String, student>map = new HashMap<String, student>();
-	 public static student st = new student();
-	 String sub;
-	 double grade;
-	    
-   public student(String name, int id, String num, String email, String les, int pay, String sub, double grade){
+	public student(String name, int id, String num, String email, String les, int pay, String sub, double grade){
 	        super(num, id, email, name, les, pay);
 	    	this.sub=sub;
 	    	this.grade=grade;
-	    }
+	}
+	public student(){
+	
+	}
+	
+	public String toString(){
+		StringBuffer buf = new StringBuffer();
+    	buf.append(name).append(" ").append(id).append(" ").append(num).append(" ").append(email).append(" ").
+    	append(les).append(" ").append(pay).append(" ").append(sub).append(" ").append(grade).append(" ");
+   		
+		return buf.toString();
+	}
    
-   public student(){
-	   
-   }
-   public String toString(){
-       StringBuffer buf = new StringBuffer();
-       buf.append(name).append(" ").append(id).append(" ").append(num).append(" ").append(email).append(" ").
-       append(les).append(" ").append(pay).append(" ").append(sub).append(" ").append(grade).append(" ");
-   	return buf.toString();
-   }
-   
+	/* í•™ìƒ ì •ë³´ ì €ì¥ */
 	public static void stu(){
 		if(map.size()==0){
-			map.put("±¸°æ¹Î", new student("±¸°æ¹Î",20120786, "01026598248","rudals@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 210,"HCI",3.0));
-			map.put("±ÇÇõ¹ü", new student("±ÇÇõ¹ü",20141175, "01078965432","gurqja@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 130,"HCI",3.4));
-			map.put("±è¼­Èñ", new student("±è¼­Èñ",20130395, "01052583659","tigml@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 50,"HCI",3.8));
-			map.put("µÎÁö¼ö", new student("µÎÁö¼ö",20140632, "01029536598","doo@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 100,"HCI",4.2));
-			map.put("¸ğÁø¼·", new student("¸ğÁø¼·",20130752, "01084589965","singha@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 60,"HCI",2.8));
-			map.put("¹®ÇıÀÎ", new student("¹®ÇıÀÎ",20140597, "01026598745","heain@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 250,"HCI",3.5));
-			map.put("¹Ú±â¹ü", new student("¹Ú±â¹ü",20120781, "01058479532","riqjack@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 150,"HCI",4.5));
-			map.put("¹ÚµµÇö", new student("¹ÚµµÇö",20113117, "01059874562","cvdwe@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 145,"HCI",3.6));
-			map.put("¹Ú½Â¼ö", new student("¹Ú½Â¼ö",20120778, "01089532652","wojuro@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 80,"HCI",2.5));
-			map.put("¹ÚÁ¾¿ø", new student("¹ÚÁ¾¿ø",20130732, "01032959783","llone@naver.com","ÄÄÇ»ÅÍ°øÇĞ°ú", 200,"HCI",4.1));
-			}
+			map.put("êµ¬ê²½ë¯¼", new student("êµ¬ê²½ë¯¼",20120786, "01026598248","rudals@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 210,"HCI",3.0));
+			map.put("ê¶Œí˜ë²”", new student("ê¶Œí˜ë²”",20141175, "01078965432","gurqja@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 130,"HCI",3.4));
+			map.put("ê¹€ì„œí¬", new student("ê¹€ì„œí¬",20130395, "01052583659","tigml@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 50,"HCI",3.8));
+			map.put("ë‘ì§€ìˆ˜", new student("ë‘ì§€ìˆ˜",20140632, "01029536598","doo@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 100,"HCI",4.2));
+			map.put("ëª¨ì§„ì„­", new student("ëª¨ì§„ì„­",20130752, "01084589965","singha@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 60,"HCI",2.8));
+			map.put("ë¬¸í˜œì¸", new student("ë¬¸í˜œì¸",20140597, "01026598745","heain@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 250,"HCI",3.5));
+			map.put("ë°•ê¸°ë²”", new student("ë°•ê¸°ë²”",20120781, "01058479532","riqjack@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 150,"HCI",4.5));
+			map.put("ë°•ë„í˜„", new student("ë°•ë„í˜„",20113117, "01059874562","cvdwe@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 145,"HCI",3.6));
+			map.put("ë°•ìŠ¹ìˆ˜", new student("ë°•ìŠ¹ìˆ˜",20120778, "01089532652","wojuro@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 80,"HCI",2.5));
+			map.put("ë°•ì¢…ì›", new student("ë°•ì¢…ì›",20130732, "01032959783","llone@naver.com","ì»´í“¨í„°ê³µí•™ê³¼", 200,"HCI",4.1));
+		}
 		
 		System.out.println();
-		System.out.println("[ÇĞ»ı °ü¸®] ");
+		System.out.println("[í•™ìƒ ê´€ë¦¬] ");
 		System.out.println();
 	    System.out.println("=============================================================================");
-		System.out.println("1. Á¤º¸ÀÔ·Â | 2. Á¤º¸ »èÁ¦ | 3. Á¤º¸ È®ÀÎ ¹× ¼öÁ¤ | 4. Á¤º¸ °Ë»ö | 5. ÀüÃ¼ ÇĞ»ı È®ÀÎ  | 0. ÃÊ±âÈ­¸é");
+		System.out.println("1. ì •ë³´ì…ë ¥ | 2. ì •ë³´ ì‚­ì œ | 3. ì •ë³´ í™•ì¸ ë° ìˆ˜ì • | 4. ì •ë³´ ê²€ìƒ‰ | 5. ì „ì²´ í•™ìƒ í™•ì¸  | 0. ì´ˆê¸°í™”ë©´");
 		System.out.println("==============================================================================");
 		System.out.println();
 		Scanner scan = new Scanner(System.in);
         
 		int select = scan.nextInt();
-        switch(select)
-        {
-          case 1 : 
-        	st.add(); 
-        	break; 
-          case 2 :
-        	st.del();
-          	break; 
-          case 3 :
-        	st.fix();
-          	break;
-          case 4 : 
-        	st.search();
-          	break;
-          case 5 :
-        	st.print();
-          	break; 
-          case 0 :
-          	System.out.println("ÃÊ±â¸Ş´º·Î µ¹¾Æ°©´Ï´Ù."); 
-          	info.main(null); 
-        } 
+        switch(select){
+			case 1 : 
+				st.add(); 
+				break; 
+			case 2 :
+				st.del();
+				break; 
+			case 3 :
+				st.fix();
+				break;
+			case 4 : 
+				st.search();
+				break;
+			case 5 :
+				st.print();
+				break; 
+			case 0 :
+				System.out.println("ì´ˆê¸°ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤."); 
+				info.main(null); 
+		} 
 	}
 
-	public   void add(){
-		
+	/* í•™ìƒ ì •ë³´ ì…ë ¥ */
+	public void add(){
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println();
-		System.out.println("1. ÇĞ»ı Á¤º¸ ÀÔ·Â");
+		System.out.println("1. í•™ìƒ ì •ë³´ ì…ë ¥");
 		System.out.println();
-		System.out.println("´ÙÀ½À» ¼ø¼­´ë·Î ÀÔ·ÂÇÏ¼¼¿ä");
-		System.out.println(" ÀÌ¸§ | ÇĞ¹ø | ÀüÈ­¹øÈ£ | ÀÌ¸ŞÀÏ | ¼Ò¼ÓÇĞ°ú | ÀåÇĞ±İ³»¿ª  | ¼ö°­°ú¸ñ | ¼ºÀû |");
-		System.out.print("ÀÌ¸§ : ");
+		System.out.println("ë‹¤ìŒì„ ìˆœì„œëŒ€ë¡œ ì…ë ¥í•˜ì„¸ìš”");
+		System.out.println(" ì´ë¦„ | í•™ë²ˆ | ì „í™”ë²ˆí˜¸ | ì´ë©”ì¼ | ì†Œì†í•™ê³¼ | ì¥í•™ê¸ˆë‚´ì—­  | ìˆ˜ê°•ê³¼ëª© | ì„±ì  |");
+		System.out.print("ì´ë¦„ : ");
 		String name = sc.next();
-		System.out.print("ÇĞ¹ø : ");
+		System.out.print("í•™ë²ˆ : ");
 		int id = sc.nextInt();
-		System.out.print("ÀüÈ­¹øÈ£ : ");
+		System.out.print("ì „í™”ë²ˆí˜¸ : ");
 		String num = sc.next();
-		System.out.print("ÀÌ¸ŞÀÏ : ");
+		System.out.print("ì´ë©”ì¼ : ");
 		String email = sc.next();
-		System.out.print("¼Ò¼ÓÇĞ°ú : ");
+		System.out.print("ì†Œì†í•™ê³¼ : ");
 		String les = sc.next();
-		System.out.print("ÀåÇĞ±İ³»¿ª : ");
+		System.out.print("ì¥í•™ê¸ˆë‚´ì—­ : ");
 		int pay = sc.nextInt();
-		System.out.print("¼ö°­°ú¸ñ: ");
+		System.out.print("ìˆ˜ê°•ê³¼ëª©: ");
 		String sub = sc.next();
-		System.out.print("¼ºÀû : ");
+		System.out.print("ì„±ì  : ");
 		double grade = sc.nextDouble();
 		
 		map.put(name, new student(name, id, num, email, les, pay, sub, grade));
 		
-		System.out.println("ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		
-		 System.out.println("======================================"); 
-         System.out.println("»óÀ§¸Ş´º·Î µ¹¾Æ°¡·Á¸é q¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-         System.out.print(">>");
-         Scanner scanner = new Scanner(System.in);
-         String prin = scanner.nextLine();
-         switch(prin) 
-         {
-         	case "q" : 
-         		
-         		stu();
-         		break; 
-   }	 
+		System.out.println("======================================"); 
+        System.out.println("ìƒìœ„ë©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ që¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+        System.out.print(">>");
+        Scanner scanner = new Scanner(System.in);
+        String prin = scanner.nextLine();
+        switch(prin) {
+			case "q" : 	
+				stu();
+         		break;
+		}	 
 	}
-	public   void del(){
+	
+	/* í•™ìƒ ì •ë³´ ì‚­ì œ */
+	public void del(){
 		 
 		Scanner sc = new Scanner(System.in);
 		System.out.println();
-		System.out.println("2. ÇĞ»ı Á¤º¸ »èÁ¦");
+		System.out.println("2. í•™ìƒ ì •ë³´ ì‚­ì œ");
 		System.out.println();
-		System.out.println("»èÁ¦ÇÒ ÇĞ»ıÀÇ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
-		System.out.println("ÀÌ¸§ : ");
+		System.out.println("ì‚­ì œí•  í•™ìƒì˜ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
+		System.out.println("ì´ë¦„ : ");
 		String name = sc.nextLine();
 		
 		map.remove(name);
-		System.out.println(name +"ÇĞ»ıÀÇ Á¤º¸´Â »èÁ¦µÇ¾ú½À´Ï´Ù.");
+		System.out.println(name +"í•™ìƒì˜ ì •ë³´ëŠ” ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	
-		 System.out.println("======================================"); 
-         System.out.println("»óÀ§¸Ş´º·Î µ¹¾Æ°¡·Á¸é q¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-         System.out.print(">>");
-         Scanner scanner = new Scanner(System.in);
-         String prin = scanner.nextLine();
-         switch(prin) 
-         {
-         	case "q" : 
-         		
-         		stu();
-         		break; 
-   }
+		System.out.println("======================================"); 
+        System.out.println("ìƒìœ„ë©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ që¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+        System.out.print(">>");
+        Scanner scanner = new Scanner(System.in);
+        String prin = scanner.nextLine();
+        switch(prin) {
+			case "q" : 	
+				stu();
+         		break;
+		}
 	}
-	public   void fix(){
-		 
+	
+	/* í•™ìƒ ì •ë³´ ìˆ˜ì • */
+	public void fix(){ 
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.println();
-		System.out.println("4. ÇĞ»ı Á¤º¸ °Ë»ö");
+		System.out.println("4. í•™ìƒ ì •ë³´ ê²€ìƒ‰");
 		System.out.println();
-		System.out.println("°Ë»öÇÒ ÇĞ»ıÀÇ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
-		System.out.println("ÀÌ¸§ : ");
+		System.out.println("ê²€ìƒ‰í•  í•™ìƒì˜ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
+		System.out.println("ì´ë¦„ : ");
 		String name = sc.nextLine();
 		
-		System.out.println(name +"ÇĞ»ıÀÇ Á¤º¸ÀÔ´Ï´Ù.");
+		System.out.println(name +"í•™ìƒì˜ ì •ë³´ì…ë‹ˆë‹¤.");
 		System.out.println(map.get(name));
 		
-		System.out.println("¼öÁ¤ÇÒ µ¥ÀÌÅÍ¸¦ ´ÙÀ½ ¼ø¼­´ë·Î ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("ìˆ˜ì •í•  ë°ì´í„°ë¥¼ ë‹¤ìŒ ìˆœì„œëŒ€ë¡œ ì…ë ¥í•˜ì„¸ìš”");
 		System.out.println();
-		System.out.println(" ÀÌ¸§ | ÇĞ¹ø | ÀüÈ­¹øÈ£ | ÀÌ¸ŞÀÏ | ¼Ò¼ÓÇĞ°ú | ÀåÇĞ±İ³»¿ª  | ¼ö°­°ú¸ñ | ¼ºÀû |");
+		System.out.println(" ì´ë¦„ | í•™ë²ˆ | ì „í™”ë²ˆí˜¸ | ì´ë©”ì¼ | ì†Œì†í•™ê³¼ | ì¥í•™ê¸ˆë‚´ì—­  | ìˆ˜ê°•ê³¼ëª© | ì„±ì  |");
 		
-		System.out.print("ÇĞ¹ø : ");
+		System.out.print("í•™ë²ˆ : ");
 		int id = sc.nextInt();
-		System.out.print("ÀüÈ­¹øÈ£ : ");
+		System.out.print("ì „í™”ë²ˆí˜¸ : ");
 		String num = sc.next();
-		System.out.print("ÀÌ¸ŞÀÏ : ");
+		System.out.print("ì´ë©”ì¼ : ");
 		String email = sc.next();
-		System.out.print("¼Ò¼ÓÇĞ°ú : ");
+		System.out.print("ì†Œì†í•™ê³¼ : ");
 		String les = sc.next();
-		System.out.print("ÀåÇĞ±İ³»¿ª : ");
+		System.out.print("ì¥í•™ê¸ˆë‚´ì—­ : ");
 		int pay = sc.nextInt();
-		System.out.print("¼ö°­°ú¸ñ: ");
+		System.out.print("ìˆ˜ê°•ê³¼ëª©: ");
 		String sub = sc.next();
-		System.out.print("¼ºÀû : ");
+		System.out.print("ì„±ì  : ");
 		double grade = sc.nextDouble();
 		
         map.put(name, new student(name, id, num, email, les, pay, sub, grade));
 		
-		System.out.println("¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+		System.out.println("ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	
-		 System.out.println("======================================"); 
-         System.out.println("»óÀ§¸Ş´º·Î µ¹¾Æ°¡·Á¸é q¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-         System.out.print(">>");
-         Scanner scanner = new Scanner(System.in);
-         String prin = scanner.nextLine();
-         switch(prin) 
-         {
-         	case "q" : 
-         		
-         		stu();
-         		break; 
-   }
+		System.out.println("======================================"); 
+        System.out.println("ìƒìœ„ë©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ që¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+        System.out.print(">>");
+        Scanner scanner = new Scanner(System.in);
+        String prin = scanner.nextLine();
+        switch(prin) {
+			case "q" : 	
+				stu();
+         		break;
+		}	 
 	}
-	public   void search(){
-		 
+	
+	/* í•™ìƒ ì •ë³´ ê²€ìƒ‰ */
+	public void search(){	 
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.println();
-		System.out.println("4. ÇĞ»ı Á¤º¸ °Ë»ö");
+		System.out.println("4. í•™ìƒ ì •ë³´ ê²€ìƒ‰");
 		System.out.println();
-		System.out.println("°Ë»öÇÒ ÇĞ»ıÀÇ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
-		System.out.println("ÀÌ¸§ : ");
+		System.out.println("ê²€ìƒ‰í•  í•™ìƒì˜ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
+		System.out.println("ì´ë¦„ : ");
 		String name = sc.nextLine();
 		
-		System.out.println(name +"ÇĞ»ıÀÇ Á¤º¸ÀÔ´Ï´Ù.");
+		System.out.println(name +"í•™ìƒì˜ ì •ë³´ì…ë‹ˆë‹¤.");
 		
 		System.out.println(map.get(name));
 		
-		 System.out.println("======================================"); 
-         System.out.println("»óÀ§¸Ş´º·Î µ¹¾Æ°¡·Á¸é q¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-         System.out.print(">>");
-         Scanner scanner = new Scanner(System.in);
-         String prin = scanner.nextLine();
-         switch(prin) 
-         {
-         	case "q" : 
-         		
-         		stu();
-         		break; 
-   }
+		System.out.println("======================================"); 
+        System.out.println("ìƒìœ„ë©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ që¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+        System.out.print(">>");
+        Scanner scanner = new Scanner(System.in);
+        String prin = scanner.nextLine();
+        switch(prin) {
+			case "q" : 	
+				stu();
+         		break;
+		}	 
 	}
+	
+	/* í•™ìƒ ì •ë³´ ì¶œë ¥ */
 	public   void print(){
-		 
 		System.out.println();
-		System.out.println("5. ÀüÃ¼ ÇĞ»ı È®ÀÎ");
+		System.out.println("5. ì „ì²´ í•™ìƒ í™•ì¸");
 		System.out.println();
 		for(String key : map.keySet()){
 			System.out.println(map.get(key));
 		}
 		
-		 System.out.println("======================================"); 
-         System.out.println("»óÀ§¸Ş´º·Î µ¹¾Æ°¡·Á¸é q¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-         System.out.print(">>");
-         Scanner scanner = new Scanner(System.in);
-         String prin = scanner.nextLine();
-         switch(prin) 
-         {
-         	case "q" : 
-         		
-         		stu();
-         		break; 
-   }
+		System.out.println("======================================"); 
+        System.out.println("ìƒìœ„ë©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ që¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+        System.out.print(">>");
+        Scanner scanner = new Scanner(System.in);
+        String prin = scanner.nextLine();
+        switch(prin) {
+			case "q" : 	
+				stu();
+         		break;
+		}	 
 	}
-
 }
